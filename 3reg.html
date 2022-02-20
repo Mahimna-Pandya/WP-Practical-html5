@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <title>Reistration Form</title>
+        <link rel="stylesheet" href="3refo.css" type="text/css">
+        <script>
+            function validateform()
+            {
+            var fn = document.forms["regform"]["fname"].value;
+            var mn = document.forms["regform"]["mname"].value;
+            var ln = document.forms["regform"]["lname"].value;
+            var cn = document.forms["regform"]["cname"].value;
+            var add = document.forms["regform"]["addr"].value;
+            var em = document.forms["regform"]["email"].value;
+            var mon = document.forms["regform"]["mono"].value;
+            var gen = document.forms["regform"]["gender"].value;
+            var p = document.forms["regform"]["pass"].value;
+            var rp = document.forms["regform"]["repass"].value;
+            
+            if(fn == "" || fn == null)
+            {
+            alert("Enter Your First Name Properly...");
+            return false();
+            }
+            else if (mn == "" || mn == null) {
+                alert("Enter Your Middle Name Properly...");
+                return false();
+            }
+            else if (ln == "" || ln == null) {
+                alert("Enter Your Last Name Properly...");
+                return false();
+            }
+            else if (cn == "" || cn == null) {
+                alert("Enter Your College Name Properly...");
+                return false();
+            }
+            else if (add == "" || add == null) {
+                alert("Address Field Should not be Empty...");
+                return false();
+            }
+            else if (em == "" || em == null) {
+                alert("Enter Your Email Address...");
+                return false();
+            }
+            else if (em.indexOf('@') <= 0) {
+                alert("Email Address should not contain @ in starting Position");
+                return false();
+            }
+            else if (em.charAt(em.length - 4) != '.' && em.charAt(em.length - 3) != '.') {
+                alert("Email Address should contain .com  or .in at the end...");
+                return false();
+            }
+            else if(mon == "" || mon == null)
+            {
+            alert("Enter Your Mobile Number...");
+            return false();
+            }
+            else if(isNaN(mon))
+            {
+            alert("Digits Only..");
+            return false();
+            }
+            else if(mon.length<10 || mon.length>10)
+            {
+            alert("Mobile Number must contain 10 Digits");
+            return false();
+            }
+            else if(p.length < 8)
+            {
+            alert("Password must contain 8 Digits");
+            return false();
+            }
+            else if(rp != p)
+            {
+            alert("Password does not match correctly..retype your password..");
+            return false();
+            }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="main">
+        <div class="regform">
+        <h1>Registration Form</h1>
+        <form name="regform" id="regform" method="post" onsubmit="validateform()">
+            <label for="fname">Enter Your First Name:</label>
+            <input type="text" name="fname" id="name"><br><br>
+
+            <label for="mname">Enter Your Middle Name:</label>
+            <input type="text" name="mname" id="name"><br><br>
+
+            <label for="lname">Enter Your Last Name:</label>
+            <input type="text" name="lname" id="name"><br><br>
+
+            <label for="cname">Enter Your College Name:</label>
+            <input type="text" name="cname" id="name"><br><br>
+
+            <label for="addr">Enter Your Residential Address:</label>
+            <textarea maxlength="100" name="addr" id="name"></textarea><br><br>
+
+            <label for="email">Enter Your Email Address:</label>
+            <input type="text" name="email" id="name"><br><br>
+
+            <label for="mono">Enter Your Mobile Number:</label>
+            <input type="text" name="mono" id="name"><br><br>
+
+            <label for="gender">Select Your Gender:</label>
+            <input type="radio" value="Male" name="gender">
+            <label for="male">Male</label>
+            <input type="radio" value="Female" name="gender">
+            <label for="female">Female</label>
+            <input type="radio" value="Rather Not Say" name="gender">
+            <label for="rns">Rather Not Say</label><br><br>
+
+            <label for="country">Select Your Country:</label>
+            <select name="country" id="name">
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="Israel">Israel</option>
+                <option value="Russia">Russia</option>
+                <option value="France">France</option>
+            </select><br><br>
+
+            <label for="pass">Enter Your Password:</label>
+            <input type="password" name="pass" id="name"><br><br>
+
+            <label for="repass">Retype your Password</label>
+            <input type="password" name="repass" id="name"><br><br>
+
+            <input type="submit" value="Submit" id="submit"></button>
+            
+            <input type="reset" value="Reset" id="submit"></button>
+        </form>
+        </div>
+        </div>
+    </body>
+</html>
+        
